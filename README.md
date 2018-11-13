@@ -1,4 +1,4 @@
-# \<ccum-polimer\>
+# \<ccum-polymer\>
 
 mi primer proyecto en polymer
 
