@@ -1,0 +1,41 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../emisor-evento/emisor-evento.html">
+<link rel="import" href="../receptor-evento/receptor-evento.html">
+
+<dom-module id="gestor-evento">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+      }
+    </style>
+    <!-- style  -->
+    <h1>Yo soy tu padre</h1>
+    <emisor-evento  on-myevent="processEvent"></emisor-evento>
+    <receptor-evento id="receiver"></receptor-evento>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class GestorEvento extends Polymer.Element {
+      static get is() { return 'gestor-evento'; }
+      static get properties() {
+        return {
+        };
+      }
+      processEvent(e) {
+       console.log("Capturado evento del emisor");
+       console.log(e.detail);
+       this.$.receiver.course = e.detail.course;
+       this.$.receiver.year = e.detail.year;
+     }
+    }
+
+    window.customElements.define(GestorEvento.is, GestorEvento);
+  </script>
+</dom-module>

@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html" />
+
+<dom-module id="visor-persona">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+      }
+    </style>
+    <!-- style  -->
+   <h2>Mi id es [[first_name]]</h2>
+   <h3>y me llamo [[last_name]]</h3>
+
+   <!-- Place iron-ajax below the HTML -->
+  <iron-ajax auto
+    id="getPerson"
+    url="http://localhost:3000/apiperu/v2/users/2"
+    handle-as="json"
+    on-response="showData"
+  >
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class VisorPersona extends Polymer.Element {
+      static get is() { return 'visor-persona'; }
+      static get properties() {
+        return {
+          first_name: {
+            type: String
+          }, last_name: {
+            type: String
+          }
+        };
+      }
+      showData(data) {
+        console.log("showData");
+        console.log(data.detail.response);
+        this.first_name = data.detail.response.first_name;
+        this.last_name = data.detail.response.last_name;
+      }
+    }
+
+    window.customElements.define(VisorPersona.is, VisorPersona);
+  </script>
+</dom-module>

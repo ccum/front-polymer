@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../test-demo-dos/test-demo-dos.html">
+<dom-module id="test-demo">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background-color: #563d7c;
+        color: white;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    <test-demo-dos prop1="prueba" prop2="40"></test-demo-dos>
+    <h2>Hello [[prop2]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class TestDemo extends Polymer.Element {
+      static get is() { return 'test-demo'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'test-Cesar'
+          },
+          prop2: {
+            type: String,
+            value: 'un string'
+          }
+        };
+      }
+      saludar(){
+        console.log("saludo");
+      }
+    }
+
+    window.customElements.define(TestDemo.is, TestDemo);
+  </script>
+</dom-module>

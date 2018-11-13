@@ -1,0 +1,31 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="pagina-base">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+      }
+    </style>
+    <!-- style  -->
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PaginaBase extends Polymer.Element {
+      static get is() { return 'pagina-base'; }
+      static get properties() {
+        return {
+        };
+      }
+
+    }
+
+    window.customElements.define(PaginaBase.is, PaginaBase);
+  </script>
+</dom-module>

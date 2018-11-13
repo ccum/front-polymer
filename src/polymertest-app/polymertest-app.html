@@ -1,0 +1,42 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="polymertest-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <!-- <h2>Hello [[prop1]]!</h2>
+    <test-demo-dos prop1="prueba" prop2="40"></test-demo-dos>
+    <h2>Hello [[prop2]]!</h2> -->
+    <input type="text" value="{{courseName::input}}" />
+    <h2>This is a [[courseSubject]] course</h2>
+    <h2>and it's called [[courseName]]</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PolymertestApp extends Polymer.Element {
+      static get is() { return 'polymertest-app'; }
+      static get properties() {
+        return {
+          courseName: {
+            type: String,
+            value: 'Polymer'
+          },
+          courseSubject: {
+            type: String,
+            value: 'Web Components and Polymer'
+          }
+        };
+      }
+
+    }
+
+    window.customElements.define(PolymertestApp.is, PolymertestApp);
+  </script>
+</dom-module>

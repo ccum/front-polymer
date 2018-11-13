@@ -1,0 +1,7 @@
+{
+  "name": "ccum-polimer",
+  "short_name": "ccum-polimer",
+  "description": "mi primer proyecto en polymer",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,40 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="receptor-evento">
+  <template>
+    <style>
+      :host {
+        display: block;
+
+      }
+    </style>
+    <!-- style  -->
+   <h2>Soy el receptor</h2>
+   <h3>Este curso es [[course]]</h3>
+   <h3>y estamos en el año [[year]]</h3>
+
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class ReceptorEvento extends Polymer.Element {
+      static get is() { return 'receptor-evento'; }
+      static get properties() {
+        return {
+          course: {
+             type: String
+           }, year: {
+             type: String
+           }
+        };
+      }
+
+    }
+
+    window.customElements.define(ReceptorEvento.is, ReceptorEvento);
+  </script>
+</dom-module>

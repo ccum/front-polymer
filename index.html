@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ccum-polimer</title>
+    <meta name="description" content="mi primer proyecto en polymer">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <!--este es el pollyfill: javaScript que añande funcionalidad que el navegador
+  no soporta de forma nativa -->
+
+    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!--ESTO ES PARA EL ROUTING-->
+    <link rel="import" href="/bower_components/app-router/app-router.html">
+
+
+
+    <link rel="import" href="/src/test-demo/test-demo.html">
+    <link rel="import" href="/src/test-demo-dos/test-demo-dos.html">
+    <link rel="import" href="/src/polymertest-app/polymertest-app.html">
+    <link rel="import" href="/src/visor-curso/visor-curso.html">
+    <link rel="import" href="/src/visor-persona/visor-persona.html">
+    <link rel="import" href="/src/frontproyecto-app/frontproyecto-app.html">
+    <link rel="import" href="/src/gestor-evento/gestor-evento.html">
+    <link rel="import" href="/src/page-not-found/page-not-found.html">
+
+  </head>
+  <body>
+    <!-- <test-demo prop1="Madrid" prop2="Cesar Cueva"></test-demo> -->
+    <!-- <test-demo-dos prop1="Madrid" prop2="20"></test-demo-dos> -->
+    <!-- <test-demo-dos></test-demo-dos> -->
+    <!-- <polymertest-app></polymertest-app>-->
+    <!-- <visor-curso></visor-curso> -->
+    <!-- <visor-curso course-subject="Polymer" course-name="Web Components and Polymer" course-duration="1"></visor-curso>
+    <visor-curso course-subject="Cells" course-name="Cells Specialized" course-duration="2"></visor-curso>
+    <visor-curso course-subject="HTML" course-name="HTML 101" course-duration="3"></visor-curso> -->
+    <!-- <visor-persona></visor-persona> -->
+    <!-- <gestor-evento></gestor-evento> -->
+    <!-- <page-not-found></page-not-found> -->
+    <h1> Enrutamiento <h1>
+    <app-router>
+      <app-route path="/"></app-route>
+      <app-route path="/person" import="/src/visor-persona/visor-persona.html"></app-route>
+      <app-route path="*" import="/src/page-not-found/page-not-found.html"></app-route>
+    </app-router>
+  </body>
+</html>
